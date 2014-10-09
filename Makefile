@@ -1,7 +1,7 @@
 install:
 	npm install
 	./node_modules/.bin/bower install
-	./node_modules/.bin/gulp
+	./node_modules/.bin/gulp build
 
 build:
 	./node_modules/.bin/gulp build
@@ -10,7 +10,7 @@ watch:
 	./node_modules/.bin/gulp watch
 
 clean:
-	rm -Rf node_modules components build .sass-cache
+	rm -Rf node_modules
 
 rebuild: clean build
 
