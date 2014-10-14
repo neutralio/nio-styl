@@ -1,9 +1,6 @@
-.font-header
-	font-family font-family-header
-
 .col
 	float left
-	width tile-width + tile-spacing
+	width grid-tile-width + grid-gutter
 	&:last-of-type .tile
 		left auto
 		right 0
@@ -11,19 +8,14 @@
 		bottom 0
 		top auto
 
-@keyframes slide-down
-	from
-		height 0
-	to
-		height tile-height + tile-spacing
-
 .tile-wrapper
-	border tile-spacing * .5 solid transparent
+	@extend .a-slide-down
+	border grid-gutter * .5 solid transparent
 	float left
-	height tile-height + tile-spacing
+	height grid-tile-height + grid-gutter
 	position relative
 	transition transition-duration all
-	width tile-width + tile-spacing
+	width grid-tile-width + grid-gutter
 	&, *
 		box-sizing border-box
 	*
@@ -31,30 +23,27 @@
 		padding 0
 	&:hover
 		border-color linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .1))
-	&.slide-down
-		animation slide-down transition-duration
 
 .tile
+	@extend .f-base
+	@extend .zi-1
+	@extend .a-zoom-in
 	background #fff
 	border-radius border-radius
 	color color
 	cursor pointer
-	font-family font-family
-	font-size type-base
-	font-weight 200 //font-weight
-	height tile-height
+	height grid-tile-height
 	left 0
 	padding tile-header-height 0 tile-footer-height
 	position absolute
 	top 0
+	width grid-tile-width
 	if use-transitions
 		transition all transition-duration
-	width tile-width
-	z-index z-index-1
 	if use-transforms
 		&:hover
+			@extend .zi-3
 			transform scale(1.1, 1.1)
-			z-index z-index-3
 	p
 		margin-bottom tile-padding
 	a
@@ -64,8 +53,9 @@
 		&:hover
 			text-decoration underline
 	::selection
-		background pink //color-selection
-.tile-header
+		background color-selection
+.tile-wide
+	width grid-tile-width-wide
 .tile-content
 	padding tile-padding
 .tile-header
@@ -82,54 +72,61 @@
 // Tile Header
 // ------------------------------------------------------------
 .tile-header
+	@extend .ff-head
+	@extend .lh-base
 	background color
 	border-radius border-radius border-radius 0 0
 	border-width tile-header-border tile-header-border 0
-	font-family font-family-header
 	left 0
 	color color-inverse
 	height tile-header-height
+	padding tile-header-padding
 	top 0
+	a, a:hover
+		color color-gray-lightest
 	.icon
 		opacity .5
 		height 100%
 		position absolute
 		right tile-padding
 		top tile-padding * -1.2
-.tile-author
-	color #fff !important
-	// add right padding for the icons
-	padding tile-padding * .15 tile-avatar-width 0 tile-padding
-	time
-		font-weight 200
-		font-size type-small
-		display block
-		opacity .6
-.has-profile-image .tile-author
-	padding-left tile-avatar-width + tile-padding
-.tile-author-avatar
-.tile-author-name
-	display block
-.tile-author-avatar
-	background rgba(0, 0, 0, .2)
-	border tile-avatar-border solid rgba(0, 0, 0, .5)
+.tile-avatar
+	@extend .u-block
+	border-bottom 1px solid rgba(0, 0, 0, .5)
 	border-radius border-radius
-	left tile-padding
+	left 0
 	height tile-avatar-height
 	position absolute
-	top tile-padding
+	top 0
 	width tile-avatar-width
+	img
+		height 100%
+		width 100%
+.tile-author
+	@extend .u-center-vertical
+	@extend .u-block
+	@extend .fs-larger
+	color #fff !important
+	padding-left tile-padding
+	// add right padding for the icons
+	padding-right tile-avatar-width
+	.has-profile-image &
+		padding-left tile-avatar-width + tile-padding
+	time
+		@extend .fs-small
+		@extend .fw-light
+		display block
+		opacity .6
 .tile-author-name
-	font-size type-larger
-	if tile-author-name-margin
-		margin tile-author-name-margin
+	@extend .u-ellipsis
+	@extend .fs-larger
 
 // Tile Content
 // ------------------------------------------------------------
 .tile-content
+	@extend .f-base
 	background tile-content-bg
 	border-width tile-content-border
-	font-size type-base
 	height 100%
 	margin tile-content-margin
 	padding tile-content-padding
@@ -142,18 +139,17 @@
 // Tile Footer
 // ------------------------------------------------------------
 .tile-footer
+	@extend .fs-smaller
 	background tile-content-bg
 	border-radius 0 0 border-radius border-radius
 	border-width tile-footer-border
 	border-top 0
 	bottom 0
-	font-size type-smallest
 	height tile-footer-height
 	line-height tile-footer-height
 	position relative
 	margin 0 tile-padding * 2
-	width tile-width - tile-padding * 4 - border-width * 2
-
+	width grid-tile-width - tile-padding * 4 - border-width * 2
 	&:before
 		background linear-gradient(transparent, white)
 		content ' '
@@ -171,8 +167,8 @@
 // Expanded tiles
 // ------------------------------------------------------------
 .is-expanded
-	height tile-height * 2 + tile-spacing
-	z-index z-index-2
+	@extend .zi-2
+	height grid-tile-height * 2 + grid-gutter
 	.on-expand
 		opacity 1
 .on-expand
@@ -235,11 +231,11 @@ tile-type(color)
 	.tile-header
 	.tile-text
 	.tile-footer
+		@extend .zi-3
 		color rgba(255, 255, 255, .8)
 		border 0
 		if use-transitions
 			transition margin 300ms
-		z-index z-index-3
 	.tile-header
 	.tile-text
 		background rgba(0, 0, 0, .5)
@@ -248,6 +244,8 @@ tile-type(color)
 	.tile-content
 		position static
 	.tile-text
+		@extend .a-marquee
+		animation-play-state paused
 		bottom 0
 		left 0
 		height 0
@@ -268,10 +266,10 @@ tile-type(color)
 			background rgba(0, 0, 0, 1)
 			padding 0 tile-padding * 2
 	&.is-expanded
-		width tile-width * 2 + tile-spacing
+		width grid-tile-width * 2 + grid-gutter
 	&:hover
 		.tile-text
-			animation marquee 5s linear infinite
+			animation-play-state running
 			height tile-footer-height
 			margin-bottom 0
 		.tile-header
@@ -279,8 +277,8 @@ tile-type(color)
 		&.is-expanded
 			.tile-footer
 				bottom 0
-
 .tile-media
+	@extend .zi-1
 	bottom 0
 	left 0
 	margin auto
@@ -288,8 +286,6 @@ tile-type(color)
 	right 0
 	top 0
 	width 100%
-	z-index z-index-1
-
 
 if use-arrow
 	.tile-content
@@ -297,7 +293,7 @@ if use-arrow
 		&:after
 		&:before
 			bottom 100%
-			left tile-avatar-width * .5 + arrow-size * 2 - 2
+			left tile-avatar-width * .5
 			border solid transparent
 			content " "
 			height 0
@@ -313,16 +309,3 @@ if use-arrow
 			border-color transparent
 			border-width arrow-size + border-width
 			margin-left (arrow-size + border-width) * -1
-
-@keyframes flip-in
-	0%
-		transform perspective(1000px) rotateX(180deg)
-		transition-timing-function ease-in
-	100%
-		transform perspective(1000px) rotateX(0)
-
-.flip-in
-	animation-duration 1s
-	animation-name flip-in
-	animation-fill-mode both
-	backface-visibility hidden

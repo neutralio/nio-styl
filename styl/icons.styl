@@ -1,19 +1,21 @@
+.icon-base
+	height icon-size-base
+	width icon-size-base
+.icon-mini
+	height icon-size-mini
+	width icon-size-mini
+.icon-small
+	height icon-size-small
+	width icon-size-small
+.icon-large
+	height icon-size-large
+	width icon-size-large
 .icon
 	background-position center
 	background-size contain
 	background-repeat no-repeat
 	display inline-block
-	height 20px
-	width 20px
-.icon-mini
-	height 12px
-	width 12px
-.icon-small
-	height 16px
-	width 16px
-.icon-large
-	height 80px
-	width 80px
+	@extend .icon-base
 .icon-facebook
 	background-image url(facebook.svg)
 .icon-twitter

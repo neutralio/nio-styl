@@ -1,0 +1,76 @@
+// font families
+.ff-base
+	font-family ff-base
+.ff-head
+	font-family ff-head
+
+// font-weight scale
+.fw-light
+	font-weight fw-light
+.fw-base
+	font-weight fw-base
+.fw-bold
+	font-weight fw-bold
+
+// font-size scale
+.fs-smallest
+	font-size fs-smallest
+.fs-smaller
+	font-size fs-smaller
+.fs-small
+	font-size fs-small
+.fs-base
+	font-size fs-base
+.fs-large
+	font-size fs-large
+.fs-larger
+	font-size fs-larger
+.fs-largest
+	font-size fs-largest
+
+// line-height scale
+.lh-tightest
+	line-height lh-tightest
+.lh-tighter
+	line-height lh-tighter
+.lh-tight
+	line-height lh-tight
+.lh-base
+	line-height lh-base
+.lh-loose
+	line-height lh-loose
+.lh-looser
+	line-height lh-looser
+.lh-loosest
+	line-height lh-loosest
+
+typography()
+	h1
+		font-size fs-largest
+	h2
+		font-size fs-larger
+	h3
+		font-size fs-large
+	h4
+		font-size fs-base
+	h5
+		font-size fs-small
+	h6
+		font-size fs-smaller
+	body, input, button
+		font-family ff-body
+	h1, h2, h3, h4, h5, h6
+		font-family ff-head
+	h1, h3, h4, h5, h6, strong, b
+		font-weight fw-bold
+	h2
+		font-weight fw-light
+
+// baseline
+f-base()
+	@extend .ff-base
+	@extend .fw-base
+	@extend .fs-base
+	@extend .lh-base
+.f-base
+	fbase()
