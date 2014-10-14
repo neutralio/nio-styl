@@ -1,39 +1,24 @@
 {
-  "name": "nio.js",
+  "name": "nio-styl",
   "version": "1.0.0",
-  "description": "nio.js ======",
-  "main": "gulpfile.js",
+  "description": "nio-styl",
+  "main": "index.js",
   "dependencies": {
-    "gulp-stylus": "^1.3.3"
+    "stylus": "^0.49.2",
+    "nib": "^1.0.4"
   },
-  "devDependencies": {
-    "bower": "^1.3.10",
-    "gulp": "^3.8.8",
-    "gulp-base64": "^0.1.2",
-    "gulp-browserify": "^0.5.0",
-    "gulp-concat": "^2.4.0",
-    "gulp-css-base64": "^1.2.5",
-    "gulp-csso": "^0.2.9",
-    "gulp-load-plugins": "^0.7.0",
-    "gulp-rename": "^1.2.0",
-    "gulp-styl": "^1.0.1",
-    "gulp-uglify": "^1.0.1",
-    "gulp-util": "^3.0.1",
-    "nib": "^1.0.4",
-    "styl": "^0.2.7",
-    "stylus": "^0.49.1"
-  },
+  "devDependencies": { },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/neutralio/nio.js.git"
+    "url": "https://github.com/neutralio/nio-styl.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/neutralio/nio.js/issues"
+    "url": "https://github.com/neutralio/nio-styl/issues"
   },
-  "homepage": "https://github.com/neutralio/nio.js"
+  "homepage": "https://github.com/neutralio/nio-styl"
 }
