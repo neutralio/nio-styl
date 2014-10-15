@@ -1,4 +1,4 @@
 nio-styl
 ========
 
-A stylus plugin with nio helpers. Use it just like you would use nib.
+Just some stylesheets that are shared across nio sites.
