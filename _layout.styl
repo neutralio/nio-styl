@@ -1,0 +1,90 @@
+@import _vars
+
+layout()
+	[reset]
+		&, *
+			box-sizing border-box
+			margin 0
+			padding 0
+	[container]
+		width page-largest
+		@media (max-width: page-largest)
+			width page-larger
+		@media (max-width: page-larger)
+			width page-smaller
+		@media (max-width: page-smaller)
+			width page-smallest
+
+	// normal padding
+	[pad]
+		pad(padding-base)
+	[pad-height]
+		pad-height(padding-base)
+	[pad-width]
+		pad-width(padding-base)
+
+	// double padding
+	[pad-double]
+		pad(padding-double)
+	[pad-height-double]
+		pad-height(padding-double)
+	[pad-width-double]
+		pad-width(padding-double)
+
+	// half padding
+	[pad-half]
+		pad(padding-half)
+	[pad-height-half]
+		pad-height(padding-half)
+	[pad-width-half]
+		pad-width(padding-half)
+
+	// normal padding
+	[space]
+		space(padding-base)
+	[space-height]
+		space-height(padding-base)
+	[space-width]
+		space-width(padding-base)
+
+	// double padding
+	[space-double]
+		space(padding-double)
+	[space-height-double]
+		space-height(padding-double)
+	[space-width-double]
+		space-width(padding-double)
+
+	// half padding
+	[space-half]
+		space(padding-half)
+	[space-height-half]
+		space-height(padding-half)
+	[space-width-half]
+		space-width(padding-half)
+
+	[full]
+		height 100%
+		width 100%
+	[full-width]
+		width 100%
+	[full-height]
+		height 100%
+
+pad(amount)
+	padding amount
+pad-width(amount)
+	padding-left amount
+	padding-right amount
+pad-height(amount)
+	padding-bottom amount
+	padding-top amount
+
+space(amount)
+	margin amount
+space-width(amount)
+	margin-left amount
+	margin-right amount
+space-height(amount)
+	margin-bottom amount
+	margin-top amount

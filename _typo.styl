@@ -1,0 +1,54 @@
+@import _vars
+
+typo()
+	font-family()
+	font-weight()
+	font-size()
+	line-height()
+
+font-family()
+	.family-head, h1, h2, h3, h4, h5, h6
+		font-family family-head
+	.family-body, body, :host
+		font-family family-body
+
+font-weight()
+	.weight-bold, h1, h3, h4, h5, h6, strong, b
+		font-weight weight-bold
+	.weight-base, body, input, button, :host
+		font-weight weight-base
+	.weight-light, h2
+		font-weight weight-light
+
+font-size()
+	.type-largest, h1
+		font-size type-largest
+	.type-larger, h2
+		font-size type-larger
+	.type-large, h3
+		font-size type-large
+	.type-base, h4, body, input, button, :host
+		font-size type-base
+	.type-small
+		font-size type-small
+	.type-smaller
+		font-size type-smaller
+	.type-smallest
+		font-size type-smallest
+
+line-height()
+	// line-height scale
+	.height-largest
+		line-height height-largest
+	.height-larger
+		line-height height-larger
+	.height-large
+		line-height height-large
+	.height-base, body, input, button, :host
+		line-height height-base
+	.height-small
+		line-height height-small
+	.height-smaller
+		line-height height-smaller
+	.height-smallest
+		line-height height-smallest

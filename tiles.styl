@@ -1,6 +1,6 @@
 .col
 	float left
-	width grid-tile-width + grid-gutter
+	width grid-tile-width + padding-base
 	&:last-of-type .tile
 		left auto
 		right 0
@@ -10,12 +10,12 @@
 
 .tile-wrapper
 	@extend .a-slide-down
-	border grid-gutter * .5 solid transparent
+	border padding-base * .5 solid transparent
 	float left
-	height grid-tile-height + grid-gutter
+	height grid-tile-height + padding-base
 	position relative
 	transition transition-duration all
-	width grid-tile-width + grid-gutter
+	width grid-tile-width + padding-base
 	&, *
 		box-sizing border-box
 	*
@@ -168,7 +168,7 @@
 // ------------------------------------------------------------
 .is-expanded
 	@extend .zi-2
-	height grid-tile-height * 2 + grid-gutter
+	height grid-tile-height * 2 + padding-base
 	.on-expand
 		opacity 1
 .on-expand
@@ -266,7 +266,7 @@ tile-type(color)
 			background rgba(0, 0, 0, 1)
 			padding 0 tile-padding * 2
 	&.is-expanded
-		width grid-tile-width * 2 + grid-gutter
+		width grid-tile-width * 2 + padding-base
 	&:hover
 		.tile-text
 			animation-play-state running

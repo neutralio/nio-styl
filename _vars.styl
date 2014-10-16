@@ -1,0 +1,99 @@
+// grid heights/widths/gutter
+padding-base ?= 8px
+padding-half ?= padding-base * .5
+padding-double ?= padding-base * 2
+
+// tiles
+box-height ?= 250px
+box-width ?= 300px
+box-width-padded = box-width + padding-base
+box-width-wide ?= 340px
+box-width-wide-padded = box-width-wide + padding-base
+
+// grid widths
+page-largest ?= box-width-padded * 3 + box-width-wide-padded + padding-base
+page-larger ?= box-width-padded * 2 + box-width-wide-padded + padding-base
+page-smaller ?= box-width-padded * 1 + box-width-wide-padded + padding-base
+page-smallest ?= box-width-wide-padded + padding-base
+
+// style
+style-shade ?= 0%
+style-radius ?= 0px
+style-border ?= 1px
+style-duration ?= 300ms
+
+// colors, grays
+gray-darkest ?= rgb(25, 25, 25)
+gray-darker ?= rgb(85, 85, 85)
+gray-dark ?= rgb(170, 170, 170)
+gray-base ?= rgb(204, 204, 204)
+gray-light ?= rgb(224, 224, 224)
+gray-lighter ?= rgb(247, 247, 247)
+gray-lightest ?= rgb(255, 255, 255)
+
+// colors, brands
+color-brand ?= #cfb87c
+color-default ?= rgb(255, 255, 255)
+color-facebook ?= rgb(59, 89, 152)
+color-gplus ?= rgb(179, 0, 0)
+color-linkedin ?= rgb(76, 126, 177)
+color-rss ?= rgb(32, 32, 32)
+color-twitter ?= rgb(0, 172, 237)
+
+// colors, content
+color-background ?= gray-light
+color-foreground ?= gray-lightest
+color-link ?= color-brand
+color-link-hover ?= color-link
+color-link-visited ?= color-link
+color-text ?= rgb(51, 51, 51)
+color-inverse ?= rgb(255, 255, 255)
+color-muted ?= rgba(0, 0, 0, .5)
+color-muted-inverse ?= rgba(255, 255, 255, .5)
+color-selection ?= color-brand
+
+// font-family
+family-base ?= Roboto, 'Helvetica Neue', Helvetica, sans-serif
+family-head ?= 'Roboto Condensed', font-base
+family-body ?= family-base
+
+// font-weight scale
+weight-bold ?= 400
+weight-base ?= 300
+weight-light ?= 200
+
+// font-size scale
+type-largest ?= 26px
+type-larger ?= 22px
+type-large ?= 18px
+type-base ?= 14px
+type-small ?= 12px
+type-smaller ?= 11px
+type-smallest ?= 10px
+
+// line-height scale
+height-largest ?= 40px
+height-larger ?= 30px
+height-large ?= 25px
+height-base ?= 20px
+height-small ?= 15px
+height-smaller ?= 10px
+height-smallest ?= 5px
+
+// icons
+icon-largest ?= 35px
+icon-larger ?= 30px
+icon-large ?= 25px
+icon-base ?= 20px
+icon-small ?= 15px
+icon-smaller ?= 10px
+icon-smallest ?= 5px
+
+// z-index scale
+index-1 ?= 100
+index-2 ?= 200
+index-3 ?= 300
+index-4 ?= 400
+index-5 ?= 500
+index-6 ?= 600
+index-7 ?= 700

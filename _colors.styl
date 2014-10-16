@@ -1,0 +1,23 @@
+@import _vars
+
+colors()
+	color-backgrounds()
+	color-text()
+
+color-backgrouds()
+	.background
+		background gray-background
+	.foreground
+		background gray-foreground
+
+color-text()
+	.muted
+		color color-muted
+	.muted-inverse
+		color color-muted-inverse
+	a
+		color color-link
+		&:hover
+			color color-link-hover
+		&:visited
+			color color-link-visited
