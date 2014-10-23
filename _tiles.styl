@@ -1,0 +1,159 @@
+@import nib
+@import _vars
+
+tile-header-height = 60px
+tile-footer-height = 39px
+
+tiles()
+
+	.tiles
+		.col:last-of-type .tile
+			left auto
+			right 0
+
+		.col .tile-wrapper:last-of-type .tile
+			top auto
+			bottom 0
+
+	.tile-wrapper
+		height box-height
+		position relative
+		width box-width
+		&.-wide
+			&, .tile
+				width box-width-wide
+			.tile.-expanded
+				width box-width-wide + box-width + padding-base
+
+	.tile
+		background color-foreground
+		height box-height
+		left 0
+		position absolute
+		overflow hidden
+		top 0
+		transition all duration
+		width box-width
+		p
+			margin-bottom padding-base
+		a
+			text-decoration none
+			&:hover
+				text-decoration underline
+
+		// tile states
+		&.-media
+			background gray-darkest
+			tile-type(color-muted)
+			&:hover
+				header
+					margin-top 0
+				.marquee
+					animation-play-state running
+				.tile-text
+					bottom 0
+			.tile-bottom
+				border 0
+				color color-muted-inverse
+				a
+					color gray-lightest
+			&.-expanded
+				width box-width * 2 + padding-base
+				header
+					margin-top 0
+				footer
+					margin-bottom 0
+				.tile-text
+					bottom tile-footer-height - style-border
+			header, footer, .tile-text
+				background color-muted
+				color gray-lightest
+				z-index index-3
+			header, footer
+				position relative
+			header
+				margin-top -100%
+			footer
+				border-width 0
+				margin-bottom -100%
+				&:after
+					display none
+			.tile-text
+				bottom tile-footer-height * -1
+				height tile-footer-height
+				line-height 39px
+				left 0
+				position absolute
+				width 100%
+
+		// tile contents
+		header
+			height tile-header-height
+			&, a
+				color gray-lightest
+		footer
+			border-top style-border solid gray-base
+			position relative
+			&:after
+				background linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%)
+				bottom 100%
+				content ' '
+				display block
+				height 100%
+				left 0
+				margin-bottom style-border
+				position absolute
+				width 100%
+			core-icon
+				height 12px
+				width 12px
+
+	.tile-avatar
+		height tile-header-height
+		position relative
+		width tile-header-height
+		poster(tile-header-height, tile-header-height)
+	// tile-bottom contains both tile-content and tile-footer
+	.tile-bottom
+		border style-border solid gray-base
+		border-top 0
+		border-bottom-color gray-dark
+	.tile-content
+		overflow hidden
+	.tile-media
+		margin auto
+		max-height 100%
+		max-width 100%
+		poster(box-height, box-width)
+
+	// colors
+	tile-type(color)
+		header
+			background color
+		.tile-bottom a
+			color color
+		paper-ripple
+			color color
+	.-facebook
+		tile-type(color-facebook)
+	.-twitter
+		tile-type(color-twitter)
+	.-gplus
+		tile-type(color-gplus)
+	.-linkedin
+		tile-type(color-linkedin)
+	.-rss
+		tile-type(color-rss)
+	.-original
+		tile-type(color-original)
+	.-expanded
+		height box-height * 2 + padding-base
+		z-index index-2
+		.on-expand
+			opacity 1
+	.-youtube.-expanded
+		header, footer, .tile-media img, .tile-text
+			display none !important
+	.on-expand
+		opacity 0
+		transition all duration

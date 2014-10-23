@@ -8,7 +8,7 @@ anims()
 			transition-timing-function ease-in
 		100%
 			transform perspective(1000px) rotateX(0)
-	.a-flip-in
+	.flip-in
 		animation-duration 1s
 		animation-name a-flip-in
 		animation-fill-mode both
@@ -19,29 +19,20 @@ anims()
 			height 0
 		to
 			height grid-tile-height + padding-base
-	.a-slide-down
+	.slide-down
 		animation a-slide-down 1s
 
 	@keyframes a-marquee
 		0%
-			left 0
+			text-indent 30em
 		100%
-			left -100%
-	.a-marquee
-		animation a-marquee 5s linear infinite
+			text-indent -50em
+	.marquee
+		animation a-marquee 10s linear infinite
 		overflow hidden
-		position relative
+		white-space nowrap
 		width 420px
-		div
-			display block
-			height 100%
-			overflow hidden
-			position absolute
-			width 200%
-		span
-			float left
-			width 50%
-		&:hover div
+		&:hover
 			animation-play-state paused
 	@keyframes a-zoom-in
 		0%
@@ -49,7 +40,13 @@ anims()
 			transform scale3d(.3, .3, .3)
 		50%
 			opacity 1
-	.a-zoom-in
+	.zoom-in
 		animation-duration 1s
 		animation-fill-mode both
 		animation-name a-zoom-in
+
+	.-paused
+		animation-play-state paused
+
+	.-running
+		animation-play-state running

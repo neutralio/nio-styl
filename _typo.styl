@@ -1,18 +1,18 @@
 @import _vars
 
 typo()
-	font-family()
-	font-weight()
-	font-size()
-	line-height()
+	typo-font-family()
+	typo-font-weight()
+	typo-font-size()
+	typo-line-height()
 
-font-family()
+typo-font-family()
 	.family-head, h1, h2, h3, h4, h5, h6
 		font-family family-head
 	.family-body, body, :host
 		font-family family-body
 
-font-weight()
+typo-font-weight()
 	.weight-bold, h1, h3, h4, h5, h6, strong, b
 		font-weight weight-bold
 	.weight-base, body, input, button, :host
@@ -20,7 +20,7 @@ font-weight()
 	.weight-light, h2
 		font-weight weight-light
 
-font-size()
+typo-font-size()
 	.type-largest, h1
 		font-size type-largest
 	.type-larger, h2
@@ -36,7 +36,7 @@ font-size()
 	.type-smallest
 		font-size type-smallest
 
-line-height()
+typo-line-height()
 	// line-height scale
 	.height-largest
 		line-height height-largest
