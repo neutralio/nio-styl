@@ -1,24 +1,27 @@
 {
-  "name": "nio-styl",
+  "name": "nio.css",
   "version": "1.0.0",
-  "description": "nio-styl",
+  "description": "nio.css",
   "main": "index.js",
   "dependencies": {
     "stylus": "^0.49.2",
     "nib": "^1.0.4"
   },
-  "devDependencies": { },
+  "devDependencies": {
+    "nib": "^1.0.4",
+    "stylus": "^0.49.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/neutralio/nio-styl.git"
+    "url": "https://github.com/neutralio/nio.css.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/neutralio/nio-styl/issues"
+    "url": "https://github.com/neutralio/nio.css/issues"
   },
-  "homepage": "https://github.com/neutralio/nio-styl"
+  "homepage": "https://github.com/neutralio/nio.css"
 }
