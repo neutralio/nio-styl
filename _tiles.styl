@@ -7,9 +7,13 @@ tile-footer-height = 39px
 tiles()
 
 	.tiles
-		.col:last-of-type .tile
-			left auto
-			right 0
+		.col:last-of-type
+			&:first-of-type .tile
+				left 0
+				right auto
+			.tile
+				left auto
+				right 0
 
 		.col .tile-wrapper:last-of-type .tile
 			top auto

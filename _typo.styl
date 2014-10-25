@@ -6,16 +6,20 @@ typo()
 	typo-font-size()
 	typo-line-height()
 
+	p, blockquote, h1, h2, h3, h4, h5, h6, pre
+		margin-bottom height-small
+
+
 typo-font-family()
 	.family-head, h1, h2, h3, h4, h5, h6
 		font-family family-head
-	.family-body, body, :host
+	.family-body, body, input, button
 		font-family family-body
 
 typo-font-weight()
 	.weight-bold, h1, h3, h4, h5, h6, strong, b
 		font-weight weight-bold
-	.weight-base, body, input, button, :host
+	.weight-base, body, input, button
 		font-weight weight-base
 	.weight-light, h2
 		font-weight weight-light
@@ -27,7 +31,7 @@ typo-font-size()
 		font-size type-larger
 	.type-large, h3
 		font-size type-large
-	.type-base, h4, body, input, button, :host
+	.type-base, h4, body, input, button
 		font-size type-base
 	.type-small
 		font-size type-small
@@ -44,7 +48,7 @@ typo-line-height()
 		line-height height-larger
 	.height-large
 		line-height height-large
-	.height-base, body, input, button, :host
+	.height-base, body, input, button
 		line-height height-base
 	.height-small
 		line-height height-small

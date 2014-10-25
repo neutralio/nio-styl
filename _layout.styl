@@ -1,11 +1,11 @@
 @import _vars
 
 layout()
-	[reset]
-		&, *
-			box-sizing border-box
-			margin 0
-			padding 0
+	*
+		box-sizing border-box
+		margin 0
+		padding 0
+
 	[container]
 		width page-largest
 		@media (max-width page-largest)
@@ -15,6 +15,22 @@ layout()
 		@media (max-width page-smaller)
 			width page-smallest
 
+	[visible-largest]
+		@media (max-width page-largest)
+			display none
+	[visible-larger]
+		@media (max-width page-smaller)
+			display none
+		@media (min-width page-larger)
+			display none
+	[visible-smaller]
+		@media (max-width page-smallest)
+			display none
+		@media (min-width page-smaller)
+			display none
+	[visible-smallest]
+		@media (max-width page-smallest)
+			display none
 	// normal padding
 	[pad]
 		pad(padding-base)
@@ -39,6 +55,13 @@ layout()
 	[pad-width-half]
 		pad-width(padding-half)
 
+	[pad-zero]
+		pad(0)
+	[pad-height-zero]
+		pad-height(0)
+	[pad-width-zero]
+		pad-width(0)
+
 	// normal padding
 	[space]
 		space(padding-base)
@@ -62,6 +85,14 @@ layout()
 		space-height(padding-half)
 	[space-width-half]
 		space-width(padding-half)
+
+	// half padding
+	[space-zero]
+		space(0)
+	[space-height-zero]
+		space-height(0)
+	[space-width-zero]
+		space-width(0)
 
 	[full]
 		height 100%
@@ -182,6 +213,7 @@ layout()
 	body[fullbleed]
 		margin 0
 		height 100vh
+
 
 pad(amount)
 	padding amount
