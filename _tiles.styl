@@ -51,11 +51,11 @@ tiles()
 			tile-type(color-muted)
 			&:hover
 				header
-					margin-top 0
+					transform translateY(0)
 				.marquee
 					animation-play-state running
 				.tile-text
-					bottom 0
+					transform translateY(0)
 			.tile-bottom
 				border 0
 				color color-muted-inverse
@@ -64,9 +64,9 @@ tiles()
 			&.-expanded
 				width box-width * 2 + padding-base
 				header
-					margin-top 0
+					transform translateY(0)
 				footer
-					margin-bottom 0
+					transform translateY(0)
 				.tile-text
 					bottom tile-footer-height - style-border
 			header, footer, .tile-text
@@ -76,18 +76,19 @@ tiles()
 			header, footer
 				position relative
 			header
-				margin-top tile-header-height * -1
+				transform translateY(tile-header-height * -1)
 			footer
 				border-width 0
-				margin-bottom -100%
+				transform translateY(tile-footer-height)
 				&:after
 					display none
 			.tile-text
-				bottom tile-footer-height * -1
+				bottom 0
 				height tile-footer-height
 				line-height 39px
 				left 0
 				position absolute
+				transform translateY(tile-footer-height)
 				width 100%
 
 		// tile contents
