@@ -69,6 +69,8 @@ tiles()
 					transform translateY(0)
 				.tile-text
 					bottom tile-footer-height - style-border
+				.play-arrow
+					display none
 			header, footer, .tile-text
 				background color-muted
 				color gray-lightest
@@ -82,6 +84,13 @@ tiles()
 				transform translateY(tile-footer-height)
 				&:after
 					display none
+			.play-arrow
+				display block
+				left 50%
+				position absolute
+				top 50%
+				transform translate(-50%, -50%)
+				z-index index-2
 			.tile-text
 				bottom 0
 				height tile-footer-height
