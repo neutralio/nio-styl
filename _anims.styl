@@ -25,14 +25,16 @@ anims()
 	@keyframes a-marquee
 		0%
 			text-indent 30em
+			//transform translateX(100%)
 		100%
 			text-indent -50em
+			//transform translateX(-100%)
 	.marquee
 		animation a-marquee 10s linear infinite
 		overflow hidden
 		white-space nowrap
-		width 420px
-		&hover
+		width 100%
+		&:hover
 			animation-play-state paused
 	@keyframes a-zoom-in
 		0%
