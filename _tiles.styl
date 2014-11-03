@@ -24,6 +24,8 @@ tiles()
 		height box-height
 		position relative
 		width box-width
+		&:hover
+			z-index index-2
 		&.-wide
 			&, .tile
 				width box-width-wide
@@ -35,7 +37,6 @@ tiles()
 		height box-height
 		left 0
 		position absolute
-		overflow hidden
 		top 0
 		transition all duration
 		width box-width
@@ -49,6 +50,7 @@ tiles()
 		// tile states
 		&.-media
 			background gray-darkest
+			overflow hidden
 			tile-type(color-muted)
 			&:hover
 				header
@@ -63,6 +65,7 @@ tiles()
 				a
 					color gray-lightest
 			&.-expanded
+				overflow visible
 				width box-width * 2 + padding-base
 				header
 					transform translateY(0)
@@ -172,3 +175,5 @@ tiles()
 	.on-expand
 		opacity 0
 		transition all duration
+	.tile-share .dropdown-content a
+		height 30px

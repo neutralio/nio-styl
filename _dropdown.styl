@@ -1,0 +1,37 @@
+@import _vars
+
+dropdown()
+
+	.dropdown
+		display block
+		position relative
+		&:hover .dropdown-content
+			opacity 1
+			transform translateY(0)
+
+	.dropdown-content
+		background gray-darkest
+		color gray-lightest
+		left 50%
+		margin-left -150%
+		position absolute
+		opacity 0
+		transition style-duration all
+		transform translateY(-25%)
+		top 100%
+		&:before
+			border-color transparent transparent gray-darkest transparent
+			border-style solid
+			border-width 5px
+			content ' '
+			display block
+			height 0
+			left 50%
+			margin -5px 0 0 -2.5px
+			position absolute
+			top -5px
+			width 0
+		svg
+			fill gray-lightest
+		& > a
+			display block
