@@ -24,8 +24,6 @@ tiles()
 		height box-height
 		position relative
 		width box-width
-		&:hover
-			z-index index-2
 		&.-wide
 			&, .tile
 				width box-width-wide
@@ -168,7 +166,7 @@ tiles()
 		tile-type(color-original)
 	.-expanded
 		height box-height * 2 + padding-base
-		z-index index-2
+		z-index index-3
 		.on-expand
 			opacity 1
 	.-youtube.-expanded
