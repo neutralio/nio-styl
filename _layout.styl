@@ -15,22 +15,36 @@ layout()
 		@media (max-width page-smaller)
 			width page-smallest
 
-	[visible-largest]
+	[xl-visible]
 		@media (max-width page-largest)
-			display none
-	[visible-larger]
+			display none !important
+	[lg-visible]
 		@media (max-width page-smaller)
-			display none
+			display none !important
 		@media (min-width page-larger)
-			display none
-	[visible-smaller]
+			display none !important
+	[sm-visible]
 		@media (max-width page-smallest)
-			display none
+			display none !important
 		@media (min-width page-smaller)
-			display none
-	[visible-smallest]
+			display none !important
+	[xs-visible]
 		@media (max-width page-smallest)
-			display none
+			display none !important
+
+	[xl-hidden]
+		@media (min-width page-largest)
+			display none !important
+	[lg-hidden]
+		@media (min-width page-larger) and (max-width page-largest)
+			display none !important
+	[sm-hidden]
+		@media (min-width page-smaller) and (max-width page-larger)
+			display none !important
+	[xs-hidden]
+		@media (max-width page-smaller)
+			display none !important
+
 	// normal padding
 	[pad]
 		pad(padding-base)
