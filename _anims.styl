@@ -38,12 +38,11 @@ anims()
 			animation-play-state paused
 	@keyframes a-zoom-in
 		0%
-			opacity 0
-			transform scale3d(.3, .3, .3)
-		50%
-			opacity 1
+			transform scale(0)
+		100%
+			transform scale(1)
 	.zoom-in
-		animation-duration 1s
+		animation-duration style-duration
 		animation-fill-mode both
 		animation-name a-zoom-in
 
