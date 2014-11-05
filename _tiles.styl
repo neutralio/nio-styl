@@ -20,7 +20,6 @@ tiles()
 			bottom 0
 
 	.tile-wrapper
-		cursor pointer
 		height box-height
 		position relative
 		width box-width
@@ -44,6 +43,9 @@ tiles()
 			text-decoration none
 			&:hover
 				text-decoration underline
+
+		&.-expandable
+			cursor pointer
 
 		// tile states
 		&.-media
