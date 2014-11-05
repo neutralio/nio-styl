@@ -55,8 +55,9 @@ tiles()
 					transform translateY(0)
 				.marquee
 					animation-play-state running
-				.tile-text
-					transform translateY(0)
+				&:not(.-expanded)
+					.tile-text
+						transform translateY(0)
 			.tile-bottom
 				border 0
 				color color-muted-inverse
@@ -70,7 +71,7 @@ tiles()
 				footer
 					transform translateY(0)
 				.tile-text
-					bottom tile-footer-height - style-border
+					transform translateY((tile-footer-height - style-border) * -1)
 				.play-arrow
 					display none
 			header, footer, .tile-text
