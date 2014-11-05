@@ -22,7 +22,6 @@ text()
 poster(height, width)
 	overflow hidden
 	&:before
-	&:after
 		border-style solid
 		border-width style-border
 		box-sizing border-box
@@ -30,18 +29,10 @@ poster(height, width)
 		display block
 		position absolute
 		transition duration all
-	&:before
 		border-color rgba(0, 0, 0, .3)
 		height 100%
 		left 0
 		top 0
-		width 100%
-	&:after
-		border-color rgba(255, 255, 255, .2)
-		border-width style-border 0 0 style-border
-		height height - style-border * 3
-		left style-border
-		top style-border
 		width 100%
 	img
 		height 100%
