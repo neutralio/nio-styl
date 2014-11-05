@@ -44,6 +44,12 @@ tiles()
 			&:hover
 				text-decoration underline
 
+		&:not(.-favorited) .is-favorited
+			display none
+
+		&.-favorited .is-not-favorited
+			display none
+
 		&.-expandable
 			cursor pointer
 
