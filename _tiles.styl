@@ -1,7 +1,7 @@
 @import nib
 @import _vars
 
-tile-header-height = 60px
+tile-header-height = 50px
 tile-footer-height = 39px
 
 tiles()
@@ -116,6 +116,12 @@ tiles()
 			height tile-header-height
 			&, a
 				color gray-lightest
+				font-size type-base
+				font-weight bold
+				line-height 100%
+			time
+				font-size type-small
+				font-weight normal
 		footer
 			border-top style-border solid gray-base
 			position relative
