@@ -58,6 +58,7 @@ tiles()
 			background gray-darkest
 			overflow hidden
 			tile-type(color-muted)
+			position relative
 			&:hover:not(.-playing)
 				header
 					transform translateY(0)
@@ -66,6 +67,7 @@ tiles()
 				&:not(.-expanded)
 					.tile-text
 						transform translateY(0)
+
 			.tile-bottom
 				border 0
 				color color-muted-inverse
@@ -111,6 +113,27 @@ tiles()
 				transform translateY(tile-footer-height)
 				width 100%
 
+		&.-original,
+		&.-original-video
+			&:not(.-playing):hover:after
+				content 'Read Article'
+				background-color rgba(0, 0, 0, 0.8)
+				position absolute
+				cursor pointer
+				top 0
+				left 0
+				right 0
+				bottom 0
+				z-index 2
+				text-align center
+				line-height 259px
+				color #EEE
+				font-size 20px
+				font-weight bold
+
+		&.-original-video:not(.-playing):hover:after
+			content 'Play Video'
+
 		// tile contents
 		header
 			height tile-header-height
@@ -143,6 +166,7 @@ tiles()
 		height tile-header-height
 		position relative
 		width tile-header-height
+		border-right 1px solid #fff
 		poster(tile-header-height, tile-header-height)
 	// tile-bottom contains both tile-content and tile-footer
 	.tile-bottom
