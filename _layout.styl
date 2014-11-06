@@ -6,7 +6,9 @@ layout()
 		margin 0
 		padding 0
 
-	[container]
+	.container
+		box-sizing content-box
+		margin 0 auto
 		width page-largest
 		@media (max-width page-largest)
 			width page-larger
@@ -15,218 +17,138 @@ layout()
 		@media (max-width page-smaller)
 			width page-smallest
 
-	[xl-visible]
+	.xl-visible
 		@media (max-width page-largest)
 			display none !important
-	[lg-visible]
+	.lg-visible
 		@media (max-width page-smaller)
 			display none !important
 		@media (min-width page-larger)
 			display none !important
-	[sm-visible]
+	.sm-visible
 		@media (max-width page-smallest)
 			display none !important
 		@media (min-width page-smaller)
 			display none !important
-	[xs-visible]
+	.xs-visible
 		@media (max-width page-smallest)
 			display none !important
-
-	[xl-hidden]
+	.xl-hidden
 		@media (min-width page-largest)
 			display none !important
-	[lg-hidden]
+	.lg-hidden
 		@media (min-width page-larger) and (max-width page-largest)
 			display none !important
-	[sm-hidden]
+	.sm-hidden
 		@media (min-width page-smaller) and (max-width page-larger)
 			display none !important
-	[xs-hidden]
+	.xs-hidden
 		@media (max-width page-smaller)
 			display none !important
 
 	// normal padding
-	[pad]
+	.pad
 		pad(padding-base)
-	[pad-height]
+	.pad-height
 		pad-height(padding-base)
-	[pad-width]
+	.pad-width
 		pad-width(padding-base)
 
 	// double padding
-	[pad-double]
+	.pad-double
 		pad(padding-double)
-	[pad-height-double]
+	.pad-height-double
 		pad-height(padding-double)
-	[pad-width-double]
+	.pad-width-double
 		pad-width(padding-double)
 
 	// half padding
-	[pad-half]
+	.pad-half
 		pad(padding-half)
-	[pad-height-half]
+	.pad-height-half
 		pad-height(padding-half)
-	[pad-width-half]
+	.pad-width-half
 		pad-width(padding-half)
 
-	[pad-zero]
+	.pad-zero
 		pad(0)
-	[pad-height-zero]
+	.pad-height-zero
 		pad-height(0)
-	[pad-width-zero]
+	.pad-width-zero
 		pad-width(0)
 
 	// normal padding
-	[space]
+	.space
 		space(padding-base)
-	[space-height]
+	.space-height
 		space-height(padding-base)
-	[space-width]
+	.space-width
 		space-width(padding-base)
 
 	// double padding
-	[space-double]
+	.space-double
 		space(padding-double)
-	[space-height-double]
+	.space-height-double
 		space-height(padding-double)
-	[space-width-double]
+	.space-width-double
 		space-width(padding-double)
 
 	// half padding
-	[space-half]
+	.space-half
 		space(padding-half)
-	[space-height-half]
+	.space-height-half
 		space-height(padding-half)
-	[space-width-half]
+	.space-width-half
 		space-width(padding-half)
 
 	// half padding
-	[space-zero]
+	.space-zero
 		space(0)
-	[space-height-zero]
+	.space-height-zero
 		space-height(0)
-	[space-width-zero]
+	.space-width-zero
 		space-width(0)
 
-	[full]
+	.full
 		height 100%
 		width 100%
-	[full-width]
+	.full-width
 		width 100%
-	[full-height]
+	.full-height
 		height 100%
 
-	[layout][horizontal]
-	[layout][vertical]
-		display flex
-	[layout][horizontal][inline]
-	[layout][vertical][inline]
-		display inline-flex
-
-	[layout][horizontal]
-		flex-direction row
-	[layout][horizontal][reverse]
-		flex-direction row-reverse
-	[layout][vertical]
-		flex-direction column
-	[layout][vertical][reverse]
-		flex-direction column-reverse
-
-	[layout][wrap]
-		flex-wrap wrap
-	[layout][wrap-reverse]
-		flex-wrap wrap-reverse
-
-	[flex]
-		flex 1
-		flex-basis 0.000000001px
-
-	[vertical][layout] > [flex][auto-vertical]
-	[vertical][layout]shadow [flex][auto-vertical]
-		flex-basis auto
-
-	[flex][auto]
-		flex-basis auto
-
-	[flex][none]
-		flex none
-	[flex][one]
-		flex 1
-	[flex][two]
-		flex 2
-	[flex][three]
-		flex 3
-	[flex][four]
-		flex 4
-	[flex][five]
-		flex 5
-	[flex][six]
-		flex 6
-	[flex][seven]
-		flex 7
-	[flex][eight]
-		flex 8
-	[flex][nine]
-		flex 9
-	[flex][ten]
-		flex 10
-	[flex][eleven]
-		flex 11
-	[flex][twelve]
-		flex 12
-
-	// alignment in cross axis
-	[layout][start]
-		align-items flex-start
-	[layout][center]
-	[layout][center-center]
-		align-items center
-	[layout][end]
-		align-items flex-end
-
-	// alignment in main axis
-	[layout][start-justified]
-		justify-content flex-start
-	[layout][center-justified]
-	[layout][center-center]
-		justify-content center
-	[layout][end-justified]
-		justify-content flex-end
-	[layout][around-justified]
-		justify-content space-around
-	[layout][justified]
-		justify-content space-between
-
-	// self alignment
-	[self-start]
-		align-self flex-start
-	[self-center]
-		align-self center
-	[self-end]
-		align-self flex-end
-	[self-stretch]
-		align-self stretch
-
-
-	[block]
+	.block
 		display block
-	/* ie support for hidden */
-	[hidden]
+	.hidden
 		display none !important
+	.table
+		display table
+		table-layout fixed
+	.table-row
+		display table-row
+		> *
+			display table-cell
+	.table-cell
+		display table-cell
 
-	[relative]
+	.relative
 		position relative
 
-	[fit]
+	.fit
 		position absolute
 		top 0
 		right 0
 		bottom 0
 		left 0
 
-	body[fullbleed]
-		margin 0
-		height 100vh
+	.left
+		float left
+	.right
+		float right
+	.none
+		float none
+	.clear
+		clearfix()
 
 
 pad(amount)

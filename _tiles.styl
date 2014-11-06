@@ -7,6 +7,8 @@ tile-footer-height = 39px
 tiles()
 
 	.tiles
+		.col
+			float left
 		.col:last-of-type
 			&:first-of-type .tile
 				left 0
@@ -20,7 +22,9 @@ tiles()
 			bottom 0
 
 	.tile-wrapper
+		box-sizing content-box
 		height box-height
+		margin 0 padding-half padding-base
 		position relative
 		width box-width
 		&.-wide
@@ -84,15 +88,13 @@ tiles()
 				footer
 					transform translateY(0)
 				.tile-text
-					transform translateY((tile-footer-height - style-border) * -1)
+					transform translateY(tile-footer-height * -1)
 				.play-arrow
 					display none
 			header, footer, .tile-text
 				background color-muted
 				color gray-lightest
 				z-index index-3
-			header, footer
-				position relative
 			header
 				transform translateY(tile-header-height * -1)
 			footer
@@ -137,46 +139,45 @@ tiles()
 		&.-original-video:not(.-playing):hover:after
 			content 'Play Video'
 
-		// tile contents
-		header
-			height tile-header-height
-			&, a
-				color gray-lightest
-				font-size type-base
-				font-weight bold
-				line-height 100%
-			time
-				font-size type-small
-				font-weight normal
-		footer
-			border-top style-border solid gray-base
-			position relative
-			&:after
-				background linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%)
-				bottom 100%
-				content ' '
-				display block
-				height 100%
-				left 0
-				margin-bottom style-border
-				position absolute
-				width 100%
-			core-icon
-				height 12px
-				width 12px
-
-	.tile-avatar
+	// tile contents
+	.tile-header
+	.tile-footer
+		position absolute
+	.tile-header
 		height tile-header-height
-		position relative
+		left 0
+		top 0
+		width 100%
+		> *
+			display table-cell
+			vertical-align middle
+		&, a
+			color gray-lightest
+			font-size type-base
+			font-weight bold
+			line-height 100%
+		time
+			font-size type-small
+			font-weight normal
+	.tile-avatar
+	.tile-icon
+		height tile-header-height
 		width tile-header-height
+	.tile-avatar
+		position relative
 		border-right 1px solid #fff
 		poster(tile-header-height, tile-header-height)
+	.tile-title
+		width 100%
 	// tile-bottom contains both tile-content and tile-footer
 	.tile-bottom
 		border style-border solid gray-base
 		border-top 0
 		border-bottom-color gray-dark
+		height 100%
+		padding tile-header-height 0 tile-footer-height
 	.tile-content
+		height 100%
 		overflow hidden
 	.tile-media
 		background gray-darkest center no-repeat
@@ -185,6 +186,21 @@ tiles()
 		max-height 100%
 		max-width 100%
 		poster(box-height, box-width)
+	.tile-footer
+		border-top style-border solid gray-base
+		bottom 0
+		left 0
+		position relative
+		&:after
+			background linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%)
+			bottom 100%
+			content ' '
+			display block
+			height 100%
+			left 0
+			margin-bottom style-border
+			position absolute
+			width 100%
 
 	// colors
 	tile-type(color)
