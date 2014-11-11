@@ -15,12 +15,16 @@ anims()
 		backface-visibility hidden
 
 	@keyframes a-slide-down
-		from
+		0%
 			height 0
-		to
+			opacity 0
+		50%
 			height grid-tile-height + padding-base
+			opacity 0
+		100%
+			opacity 1
 	.slide-down
-		animation a-slide-down 1s
+		animation a-slide-down 2s
 
 	@keyframes a-marquee
 		0%
