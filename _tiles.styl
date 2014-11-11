@@ -111,6 +111,10 @@ tiles()
 				top 50%
 				transform translate(-50%, -50%)
 				z-index index-2
+				background-color color-muted
+				border-radius 50%
+				use
+					fill gray-lighter
 			.tile-text
 				bottom 0
 				height tile-footer-height
@@ -232,6 +236,8 @@ tiles()
 		tile-type(color-rss)
 	.-original
 		tile-type(color-original)
+	.-media
+		tile-type(color-media)
 	.-expanded
 		height box-height * 2 + padding-base
 		z-index index-3
